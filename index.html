@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>adit's cat house</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body data-theme="light">
+
+  <div class="paws" id="paws"></div>
+
+  <div class="corner-toggles">
+    <button class="toggle-btn" id="soundToggle" data-state="on" aria-label="Toggle meow sound" title="Toggle sound">
+      <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/></svg>
+      <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M17 9l4 6M21 9l-4 6"/></svg>
+    </button>
+    <button class="toggle-btn" id="themeToggle" aria-label="Toggle day/night" title="Toggle day/night">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+    </button>
+    <button class="toggle-btn" id="langToggle" aria-label="Translate page" title="Translate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 4 5.7 4 9s-1.4 6.4-4 9c-2.6-2.6-4-5.7-4-9s1.4-6.4 4-9z"/></svg>
+      <span class="lang-code" id="langCode">EN</span>
+    </button>
+  </div>
+
+  <div class="home-socials">
+    <a href="https://www.instagram.com/adtpw_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.linkedin.com/in/adithya-putra-w-5a1ba11b7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><line x1="7" y1="10" x2="7" y2="17"/><circle cx="7" cy="6.7" r="0.9" fill="currentColor" stroke="none"/><path d="M11 17v-4.5a2.5 2.5 0 0 1 5 0V17"/><line x1="11" y1="10" x2="11" y2="17"/></svg></a>
+    <a href="#" aria-label="Ko-fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M8 15c1.3-4 6.7-4 8 0"/></svg></a>
+  </div>
+
+  <div class="desktop">
+    <div class="home-card">
+      <div class="yard" id="yard">
+        <div class="house">
+          <svg viewBox="0 0 240 220">
+            <!-- cardboard house -->
+            <ellipse cx="120" cy="205" rx="95" ry="9" fill="var(--line)"/>
+            <path d="M35 200V110l85-55 85 55v90z" fill="var(--wood)" opacity="0.18"/>
+            <path d="M35 200V110l85-55 85 55v90z" fill="none" stroke="var(--wood)" stroke-width="4"/>
+            <path d="M28 115l92-60 92 60" fill="none" stroke="var(--wood)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M85 200v-55a35 35 0 0 1 70 0v55z" fill="var(--bg)"/>
+          </svg>
+        </div>
+        <button class="cat-pos" id="catCritter" aria-label="Click the cat to send it out to patrol, eat, and nap" title="click me!">
+          <div class="cat-flip">
+            <svg viewBox="0 0 120 100">
+              <!-- tail -->
+              <path class="cat-tail" d="M100 62c14 4 20-8 12-18" fill="none" stroke="var(--ginger-deep)" stroke-width="9" stroke-linecap="round"/>
+              <!-- back paws -->
+              <ellipse class="cat-paw back-left" cx="34" cy="90" rx="9" ry="6" fill="var(--ginger-deep)"/>
+              <ellipse class="cat-paw back-right" cx="86" cy="90" rx="9" ry="6" fill="var(--ginger-deep)"/>
+              <!-- body -->
+              <ellipse cx="60" cy="70" rx="34" ry="22" fill="var(--ginger)"/>
+              <!-- front paws -->
+              <ellipse class="cat-paw front-left" cx="46" cy="88" rx="8" ry="6" fill="var(--cream-fur)"/>
+              <ellipse class="cat-paw front-right" cx="74" cy="88" rx="8" ry="6" fill="var(--cream-fur)"/>
+              <!-- head -->
+              <circle cx="60" cy="40" r="30" fill="var(--ginger)"/>
+              <path class="cat-ear" d="M38 20l-9-20 22 10z" fill="var(--ginger)"/>
+              <path class="cat-ear right" d="M82 20l9-20-22 10z" fill="var(--ginger)"/>
+              <path d="M38 20l-5-11 11 5z" fill="var(--blush)"/>
+              <path d="M82 20l5-11-11 5z" fill="var(--blush)"/>
+              <circle cx="49" cy="39" r="4.5" fill="var(--ink)" class="eye-open face-normal"/>
+              <circle cx="71" cy="39" r="4.5" fill="var(--ink)" class="eye-open face-normal"/>
+              <path d="M44 39h10M66 39h10" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round" class="eye-closed face-normal" style="display:none;"/>
+              <path d="M56 47l4 3 4-3" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" class="face-normal"/>
+              <path d="M53 52c3 2.5 11 2.5 14 0" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" class="face-normal"/>
+              <!-- surprised face, hidden unless .surprised is active -->
+              <circle cx="49" cy="38" r="6.5" fill="#fff" stroke="var(--ink)" stroke-width="1.4" class="face-surprised"/>
+              <circle cx="71" cy="38" r="6.5" fill="#fff" stroke="var(--ink)" stroke-width="1.4" class="face-surprised"/>
+              <circle cx="49" cy="38" r="3" fill="var(--ink)" class="face-surprised"/>
+              <circle cx="71" cy="38" r="3" fill="var(--ink)" class="face-surprised"/>
+              <ellipse cx="60" cy="51" rx="4" ry="5.5" fill="var(--ink)" class="face-surprised"/>
+              <!-- sleepy face, hidden unless .sleeping is active -->
+              <path d="M44 39c2 2 6 2 8 0M68 39c2 2 6 2 8 0" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" class="face-sleepy"/>
+              <path d="M57 49h6" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" class="face-sleepy"/>
+              <path d="M44 48l-13-3M44 52l-14 2M76 48l13-3M76 52l14 2" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+              <!-- cream belly patch -->
+              <ellipse cx="60" cy="74" rx="16" ry="12" fill="var(--cream-fur)" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="cat-zzz" aria-hidden="true"><span>Z</span><span>Z</span><span>z</span></div>
+        </button>
+        <audio id="bgm" src="./Media/BGM/Relax with my cat - beats to sleep_study x Fall In Luv_942_980.mp3" loop preload="none"></audio>
+        <div class="food-bowl" id="foodBowl">
+          <svg viewBox="0 0 60 34" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="30" cy="27" rx="27" ry="6" fill="var(--line)"/>
+            <path d="M6 14c0 9 10 15 24 15s24-6 24-15" fill="var(--wood)" opacity="0.85"/>
+            <ellipse cx="30" cy="14" rx="24" ry="8" fill="var(--sage)"/>
+            <g class="kibble">
+              <circle cx="20" cy="12" r="3.4" fill="var(--ginger-deep)"/>
+              <circle cx="30" cy="9" r="3.8" fill="var(--ginger)"/>
+              <circle cx="40" cy="12" r="3.4" fill="var(--ginger-deep)"/>
+              <circle cx="26" cy="15" r="3" fill="var(--ginger)"/>
+              <circle cx="34" cy="15" r="3" fill="var(--ginger-deep)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <p class="eyebrow" data-i18n="home.eyebrow">welcome to my cat house</p>
+      <h1 data-i18n="home.h1">hi! i'm adit</h1>
+      <p class="tagline" data-i18n="home.tagline" data-i18n-html>administrator, data analyst &amp; developer — try to click the cat, or click an icon below to peek inside :)</p>
+      <p class="mood-line" id="moodLine" data-i18n="mood.idle">mood: wide awake and watching you</p>
+    </div>
+  </div>
+
+  <div class="dock">
+    <button data-panel="about" aria-label="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></svg><span data-i18n="dock.about">about</span></button>
+    <button data-panel="work" aria-label="Scratch pad / work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4v16M10 4v16M14 4v16M18 4v16" stroke-linecap="round"/></svg><span data-i18n="dock.work">work</span></button>
+    <button data-panel="contact" aria-label="Food bowl / contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="15" rx="8" ry="4"/><path d="M4 15a8 3 0 0 0 16 0"/><circle cx="12" cy="6" r="2.4"/></svg><span data-i18n="dock.contact">contact</span></button>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="overlay" id="panel-about">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="drag-grip" aria-hidden="true"></span>
+        <button class="panel-close" data-close aria-label="Close">✕</button>
+      </div>
+      <div class="panel-fixed">
+        <span class="panel-tag" data-i18n="panel.room">room</span>
+        <h2 data-i18n="about.h2">about</h2>
+        <div class="about-layout">
+          <div class="about-avatar">
+            <img src="./Media/Images/2bcf06df-b643-400c-affa-7c2ec95c93fe.jpg" alt="adit p.w">
+          </div>
+          <div>
+            <p data-i18n="about.p1" data-i18n-html><strong>adithya p.w</strong> — IDN-based administrator, data analyst &amp; developer.</p>
+            <p data-i18n="about.p2">i'm a random guy who likes making cozy little internet spaces — this one's shaped like a cardboard box because, well, cats.</p>
+            <div class="chip-row">
+              <span class="chip" data-i18n="chip.admin">administrator</span>
+              <span class="chip" data-i18n="chip.dataAnalyst">data analyst</span>
+              <span class="chip" data-i18n="chip.webdev">web dev</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-scroll">
+        <div class="fact-row">
+          <div class="fact-card">
+            <h3 data-i18n="about.eduHeading">education</h3>
+            <ul><li data-i18n="about.edu1">Natural Science, MAN 2 Palu City</li><li data-i18n="about.edu2">2019</li></ul>
+          </div>
+          <div class="fact-card">
+            <h3 data-i18n="about.interestsHeading">other interests</h3>
+            <ul><li data-i18n="about.interest1">game development</li><li data-i18n="about.interest2">action-adventure games</li><li data-i18n="about.interest3">music</li><li data-i18n="about.interest4">reading books</li><li data-i18n="about.interest5">actual cats</li></ul>
+          </div>
+        </div>
+          <div class="lang-row">
+              <h3 data-i18n="about.langHeading">languages</h3>
+              <div class="lang-item">
+              <div class="lang-label"><span data-i18n="about.lang.id.name">Indonesian</span><span class="lang-level" data-i18n="about.lang.id.level">Native</span></div>
+              <div class="lang-bar"><div class="lang-fill" style="width:100%;"></div></div>
+              </div>
+              <div class="lang-item">
+              <div class="lang-label"><span data-i18n="about.lang.en.name">English</span><span class="lang-level" data-i18n="about.lang.en.level">Full Professional</span></div>
+              <div class="lang-bar"><div class="lang-fill" style="width:90%;"></div></div>
+              </div>
+              <p class="lang-note" data-i18n="about.langNote">I speak a little bit of Chinese (中文) and Japanese, but at elementary school proficiency.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <div class="overlay" id="panel-work">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="drag-grip" aria-hidden="true"></span>
+        <button class="panel-close" data-close aria-label="Close">✕</button>
+      </div>
+      <div class="panel-scroll">
+        <span class="panel-tag" data-i18n="panel.room">room</span>
+        <h2 data-i18n="work.h2">scratch pad</h2>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3 class="skill-group-title" data-i18n="work.toolsHeading">Tools</h3>
+            <div class="chip-row">
+              <span class="chip">Microsoft Office</span>
+              <span class="chip">Godot</span>
+              <span class="chip">Game Maker</span>
+              <span class="chip">Unity 2D/3D</span>
+              <span class="chip">MySQL</span>
+              <span class="chip">Blender</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title" data-i18n="work.devHeading">Development</h3>
+            <div class="chip-row">
+              <span class="chip">C#</span>
+              <span class="chip">C++</span>
+              <span class="chip">C</span>
+              <span class="chip">Python</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">HTML/CSS</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="work-list">
+          <div class="work-item">
+            <div class="work-thumb" style="background:var(--ginger);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72l.38 2.67a2 2 0 0 1-.57 1.69l-1.2 1.2a16 16 0 0 0 6.11 6.11l1.2-1.2a2 2 0 0 1 1.69-.57l2.67.38A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><h3 data-i18n="work.item1.h3">Sales Smartphone</h3><p data-i18n="work.item1.p">As a sales excecutive Samsung smartphone with 7 months of experience, i have reached 300 units sales targets for each month</p></div>
+          </div>
+          <div class="work-item">
+            <div class="work-thumb" style="background:var(--blush);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4V7z"/><path d="M3 7l9 4 9-4"/><path d="M12 11v10"/></svg></div>
+            <div><h3 data-i18n="work.item2.h3">Warehouse Administrator</h3><p data-i18n="work.item2.p">1 year experience in inventory management, shipment documentation, stock control, and data entry.</p></div>
+          </div>
+          <div class="work-item">
+            <div class="work-thumb" style="background:var(--sage);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></svg></div>
+            <div><h3 data-i18n="work.item3.h3">Sales Administrator</h3><p data-i18n="work.item3.p">1 year hands of experience supporting sales operations, administrative support, data management, and sales forecasting.</p></div>
+          </div>
+          <div class="work-item">
+            <div class="work-thumb" style="background:var(--sage);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-7"/></svg></div>
+            <div><h3 data-i18n="work.item4.h3">Data Analyst Staff</h3><p data-i18n="work.item4.p">Experience in collecting, cleaning, and analyzing data to generate actionable insights.</p></div>
+          </div>
+        </div>
+        <div class="fact-row" style="margin-top:22px;">
+          <div class="fact-card">
+            <h3 data-i18n="work.certHeading">certificate</h3>
+            <ul><li data-i18n="work.cert1">Microsoft Office Specialist, Widya Prima</li><li data-i18n="work.cert2">Search and Rescue Certificate, Brigade Penolong</li></ul>
+          </div>
+          <div class="fact-card">
+            <h3 data-i18n="work.orgHeading">organization experience</h3>
+            <ul><li data-i18n="work.org1">Student Council — Public Relations</li><li data-i18n="work.org2">Brigade Penolong — Member</li><li data-i18n="work.org3">Wanabakti — Member</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="overlay" id="panel-contact">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="drag-grip" aria-hidden="true"></span>
+        <button class="panel-close" data-close aria-label="Close">✕</button>
+      </div>
+      <div class="panel-scroll">
+        <span class="panel-tag" data-i18n="panel.room">room</span>
+        <h2 data-i18n="contact.h2">the food bowl</h2>
+        <div class="contact-body">
+          <p data-i18n="contact.p">the easiest way to reach me is email — i'll come running, promise.</p>
+          <a class="mail-btn" href="mailto:aputrawibisono@gmail.com" data-i18n="contact.mailbtn">send me an email!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./JavaScript/translations.js"></script>
+<script src="./JavaScript/script.js"></script>
+</body>
+</html>
