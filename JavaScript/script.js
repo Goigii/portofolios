@@ -363,8 +363,23 @@ const body = document.body;
     surpriseTimer = setTimeout(() => cat.classList.remove('surprised'), 480);
   }
 
+  function unlockBgm(){
+    // Mobile browsers only allow <audio>.play() during/right after a user
+    // gesture. startSleep() fires several setTimeout()s after the tap, so by
+    // then the gesture is gone and play() is silently blocked there. Priming
+    // it here (muted, played, immediately paused) inside the actual click
+    // handler "unlocks" the element so the later real play() succeeds.
+    bgm.muted = true;
+    bgm.play().then(() => {
+      bgm.pause();
+      bgm.currentTime = 0;
+      bgm.muted = false;
+    }).catch(() => { bgm.muted = false; });
+  }
+
   cat.addEventListener('click', () => {
     startleCat();
+    unlockBgm();
     if(sequenceActive){
       stopSequence();
     } else {
