@@ -377,6 +377,20 @@
     .desktop{ height:100vh; height:100dvh; overflow:hidden; justify-content:flex-start; padding-top:64px; }
     .yard{ height:210px; }
     .house{ width:180px; }
+
+    /* about panel: on phone, let the whole body scroll as one — only the
+       drag-handle/close header stays put. Desktop keeps the two-region
+       behavior (avatar block fixed, facts/lang scroll) untouched. */
+    #panel-about .panel{ overflow-y:auto; -webkit-overflow-scrolling:touch; }
+    #panel-about .panel-header{
+      position:sticky; top:0; z-index:5; background:var(--panel);
+    }
+    #panel-about .panel-fixed{
+      flex:0 0 auto; overflow:visible; border-bottom:none;
+    }
+    #panel-about .panel-scroll{
+      flex:0 0 auto; overflow:visible;
+    }
   }
 
   /* small phones */
