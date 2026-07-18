@@ -408,3 +408,30 @@
     .panel{ max-height:90vh; }
     .overlay{ padding:12px; }
   }
+/* --- device notice toast (shown on non-desktop devices) --- */
+.device-toast{
+  position:fixed; left:50%; bottom:24px; transform:translate(-50%, 130%);
+  z-index:9999; display:flex; align-items:center; gap:18px;
+  max-width:min(560px, calc(100vw - 32px));
+  background:var(--panel); border:1px solid var(--line); border-radius:20px;
+  padding:18px 20px; box-shadow:0 20px 45px var(--shadow);
+  opacity:0; transition:transform .4s ease, opacity .4s ease;
+  pointer-events:none;
+}
+.device-toast.show{
+  transform:translate(-50%, 0); opacity:1; pointer-events:auto;
+}
+.device-toast-text strong{ display:block; font-size:16px; margin-bottom:4px; }
+.device-toast-text p{ margin:0; font-size:14px; line-height:1.5; }
+.device-toast-btn{
+  flex:none; border:none; cursor:pointer; font-family:inherit; font-weight:700; font-size:15px;
+  color:#fff; background:var(--ginger-deep); padding:12px 22px; border-radius:14px;
+  box-shadow:0 8px 18px var(--shadow);
+}
+.device-toast-btn:hover{ background:var(--ginger); }
+.device-toast-btn:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+
+@media (max-width:520px){
+  .device-toast{ flex-direction:column; align-items:stretch; text-align:center; bottom:14px; padding:16px; }
+  .device-toast-btn{ width:100%; }
+}

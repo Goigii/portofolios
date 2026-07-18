@@ -36,6 +36,32 @@ const body = document.body;
     if(codeEl) codeEl.textContent = currentLang.toUpperCase();
   }
 
+  // --- "best on desktop" notice, shown once on non-desktop devices ---
+  // "non-desktop" = touch-primary input OR a narrow viewport, since that
+  // covers phones/tablets in either orientation without relying on
+  // user-agent sniffing.
+  function isNonDesktopDevice(){
+    const touchPrimary = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    const narrow = window.innerWidth <= 820;
+    return touchPrimary || narrow;
+  }
+
+  const deviceToast = document.getElementById('deviceToast');
+  const deviceToastOkay = document.getElementById('deviceToastOkay');
+  const DEVICE_TOAST_KEY = 'deviceToastDismissed';
+
+  if(deviceToast && deviceToastOkay){
+    if(isNonDesktopDevice() && !localStorage.getItem(DEVICE_TOAST_KEY)){
+      // small delay so it slides in after the page has settled, not on first paint
+      setTimeout(() => deviceToast.classList.add('show'), 900);
+    }
+    deviceToastOkay.addEventListener('click', () => {
+      deviceToast.classList.remove('show');
+      localStorage.setItem(DEVICE_TOAST_KEY, '1');
+      playCloseSfx();
+    });
+  }
+
   function setMood(key){
     currentMoodKey = key;
     const moodLineEl = document.getElementById('moodLine');

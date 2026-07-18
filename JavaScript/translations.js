@@ -91,7 +91,12 @@ window.translations = {
     // contact panel
     "contact.h2": "the food bowl",
     "contact.p": "the easiest way to reach me is email — i'll come running, promise.",
-    "contact.mailbtn": "send me an email!"
+    "contact.mailbtn": "send me an email!",
+
+    // device notice toast (shown on non-desktop devices)
+    "toast.heading": "hey there!",
+    "toast.body": "just letting you know that this site is best experienced on desktop, some features might be wonky on different devices.",
+    "toast.okay": "okay"
   },
 
   id: {
@@ -159,6 +164,11 @@ window.translations = {
     // contact panel
     "contact.h2": "Mangkuk Makanan",
     "contact.p": "Cara termudah untuk menghubungi saya adalah melalui email — saya akan segera datang, janji.",
-    "contact.mailbtn": "kirim email!"
+    "contact.mailbtn": "kirim email!",
+
+    // device notice toast (shown on non-desktop devices)
+    "toast.heading": "hai!",
+    "toast.body": "cuma mau kasih tau kalau situs ini paling enak dibuka lewat desktop, beberapa fitur mungkin agak aneh di perangkat lain.",
+    "toast.okay": "oke"
   },
   };
